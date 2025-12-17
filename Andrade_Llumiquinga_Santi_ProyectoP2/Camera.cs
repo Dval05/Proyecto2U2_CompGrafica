@@ -59,5 +59,17 @@ namespace Andrade_Llumiquinga_Santi_ProyectoP2
             if (Mode == CameraMode.Orbital) { Radius -= delta * 0.02f; if (Radius < 2f) Radius = 2f; }
             else if (Mode == CameraMode.Libre) { FreePosition += new Vector3(0, 0, -delta * 0.05f); }
         }
+
+        /// <summary>
+        /// Restablece la cámara a sus valores iniciales
+        /// </summary>
+        public void Reset()
+        {
+            Radius = 15f;
+            AngleX = 0.6f;
+            AngleY = 0.4f;
+            FreePosition = new Vector3(0, 5, 15);
+            Target = Vector3.Zero;
+        }
     }
 }

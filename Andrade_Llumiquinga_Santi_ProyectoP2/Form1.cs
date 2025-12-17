@@ -304,5 +304,26 @@ namespace Andrade_Llumiquinga_Santi_ProyectoP2
             UpdateLightingInfo();
             UpdateTransformLabels();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            // Restablecer los trackbars a sus valores originales
+            trackPosX.Value = 0;
+            trackPosY.Value = 0;
+            trackPosZ.Value = 0;
+            trackRotX.Value = 0;
+            trackRotY.Value = 0;
+            trackRotZ.Value = 0;
+            trackScale.Value = 10; // Escala 1.0x
+
+            // Restablecer la intensidad de luz
+            trackLight.Value = 100; // Intensidad 100%
+
+            // Restablecer la cámara a su posición inicial
+            _camera.Reset();
+
+            // Actualizar la figura con los valores reseteados
+            UpdateTransforms(sender, e);
+        }
     }
 }

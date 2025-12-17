@@ -23,6 +23,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnToggleDarkMode = new System.Windows.Forms.Button();
             this.grpTrans = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.lblScaleValue = new System.Windows.Forms.Label();
             this.trackScale = new System.Windows.Forms.TrackBar();
             this.lblEscGen = new System.Windows.Forms.Label();
@@ -105,6 +106,7 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.panelMenu.Controls.Add(this.btnReset);
             this.panelMenu.Controls.Add(this.grpEscena);
             this.panelMenu.Controls.Add(this.grpObjeto);
             this.panelMenu.Controls.Add(this.grpTrans);
@@ -142,7 +144,7 @@
             this.grpEscena.Controls.Add(this.lblLightingInfo);
             this.grpEscena.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.grpEscena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.grpEscena.Location = new System.Drawing.Point(18, 70);
+            this.grpEscena.Location = new System.Drawing.Point(18, 120);
             this.grpEscena.Name = "grpEscena";
             this.grpEscena.Size = new System.Drawing.Size(380, 255);
             this.grpEscena.TabIndex = 2;
@@ -251,7 +253,7 @@
             this.grpObjeto.Controls.Add(this.lblMaterialInfo);
             this.grpObjeto.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.grpObjeto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.grpObjeto.Location = new System.Drawing.Point(18, 335);
+            this.grpObjeto.Location = new System.Drawing.Point(18, 385);
             this.grpObjeto.Name = "grpObjeto";
             this.grpObjeto.Size = new System.Drawing.Size(380, 235);
             this.grpObjeto.TabIndex = 3;
@@ -371,7 +373,7 @@
             this.grpTrans.Controls.Add(this.lblScaleValue);
             this.grpTrans.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.grpTrans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.grpTrans.Location = new System.Drawing.Point(18, 580);
+            this.grpTrans.Location = new System.Drawing.Point(18, 630);
             this.grpTrans.Name = "grpTrans";
             this.grpTrans.Size = new System.Drawing.Size(380, 750);
             this.grpTrans.TabIndex = 4;
@@ -640,6 +642,20 @@
             this.lblScaleValue.TabIndex = 23;
             this.lblScaleValue.Text = "1.00x";
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(18, 65);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(380, 45);
+            this.btnReset.TabIndex = 24;
+            this.btnReset.Text = "🔄 Restablecer Todo";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,5 +732,6 @@
         private System.Windows.Forms.Label lblEscGen;
         private System.Windows.Forms.TrackBar trackScale;
         private System.Windows.Forms.Label lblScaleValue;
+        private System.Windows.Forms.Button btnReset;
     }
 }
