@@ -14,6 +14,7 @@ namespace Andrade_Llumiquinga_Santi_ProyectoP2
     public class Figure3D
     {
         // Propiedades de la figura
+        public string Name { get; set; } = "Figura";
         public ShapeType Type { get; set; }
         public MaterialType Material { get; set; } = MaterialType.Plastico;
         public Vector3 Position { get; set; }

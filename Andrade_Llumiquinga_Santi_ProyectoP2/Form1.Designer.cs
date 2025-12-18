@@ -49,6 +49,10 @@
             this.lblX = new System.Windows.Forms.Label();
             this.lblTraslacion = new System.Windows.Forms.Label();
             this.grpObjeto = new System.Windows.Forms.GroupBox();
+            this.grpFiguras = new System.Windows.Forms.GroupBox();
+            this.lstFiguras = new System.Windows.Forms.ListBox();
+            this.btnAgregarFigura = new System.Windows.Forms.Button();
+            this.btnEliminarFigura = new System.Windows.Forms.Button();
             this.lblMaterialInfo = new System.Windows.Forms.Label();
             this.chkWireframe = new System.Windows.Forms.CheckBox();
             this.btnColor = new System.Windows.Forms.Button();
@@ -66,6 +70,7 @@
             this.lblCamara = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
+            this.grpFiguras.SuspendLayout();
             this.grpTrans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackRotZ)).BeginInit();
@@ -108,6 +113,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
             this.panelMenu.Controls.Add(this.btnReset);
             this.panelMenu.Controls.Add(this.grpEscena);
+            this.panelMenu.Controls.Add(this.grpFiguras);
             this.panelMenu.Controls.Add(this.grpObjeto);
             this.panelMenu.Controls.Add(this.grpTrans);
             this.panelMenu.Controls.Add(this.btnToggleDarkMode);
@@ -242,6 +248,63 @@
             this.lblLightingInfo.TabIndex = 7;
             this.lblLightingInfo.Text = "Día: Luz solar brillante";
             // 
+            // grpFiguras
+            // 
+            this.grpFiguras.Controls.Add(this.lstFiguras);
+            this.grpFiguras.Controls.Add(this.btnAgregarFigura);
+            this.grpFiguras.Controls.Add(this.btnEliminarFigura);
+            this.grpFiguras.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.grpFiguras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.grpFiguras.Location = new System.Drawing.Point(18, 385);
+            this.grpFiguras.Name = "grpFiguras";
+            this.grpFiguras.Size = new System.Drawing.Size(380, 180);
+            this.grpFiguras.TabIndex = 25;
+            this.grpFiguras.TabStop = false;
+            this.grpFiguras.Text = "📦 Figuras en Escena";
+            // 
+            // lstFiguras
+            // 
+            this.lstFiguras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.lstFiguras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstFiguras.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lstFiguras.ForeColor = System.Drawing.Color.White;
+            this.lstFiguras.FormattingEnabled = true;
+            this.lstFiguras.ItemHeight = 17;
+            this.lstFiguras.Location = new System.Drawing.Point(13, 30);
+            this.lstFiguras.Name = "lstFiguras";
+            this.lstFiguras.DisplayMember = "Name";
+            this.lstFiguras.Size = new System.Drawing.Size(350, 102);
+            this.lstFiguras.TabIndex = 0;
+            this.lstFiguras.SelectedIndexChanged += new System.EventHandler(this.lstFiguras_SelectedIndexChanged);
+            // 
+            // btnAgregarFigura
+            // 
+            this.btnAgregarFigura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(180)))), ((int)(((byte)(80)))));
+            this.btnAgregarFigura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarFigura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarFigura.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarFigura.Location = new System.Drawing.Point(13, 140);
+            this.btnAgregarFigura.Name = "btnAgregarFigura";
+            this.btnAgregarFigura.Size = new System.Drawing.Size(170, 30);
+            this.btnAgregarFigura.TabIndex = 1;
+            this.btnAgregarFigura.Text = "➕ Agregar";
+            this.btnAgregarFigura.UseVisualStyleBackColor = false;
+            this.btnAgregarFigura.Click += new System.EventHandler(this.btnAgregarFigura_Click);
+            // 
+            // btnEliminarFigura
+            // 
+            this.btnEliminarFigura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnEliminarFigura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarFigura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnEliminarFigura.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarFigura.Location = new System.Drawing.Point(193, 140);
+            this.btnEliminarFigura.Name = "btnEliminarFigura";
+            this.btnEliminarFigura.Size = new System.Drawing.Size(170, 30);
+            this.btnEliminarFigura.TabIndex = 2;
+            this.btnEliminarFigura.Text = "🗑 Eliminar";
+            this.btnEliminarFigura.UseVisualStyleBackColor = false;
+            this.btnEliminarFigura.Click += new System.EventHandler(this.btnEliminarFigura_Click);
+            // 
             // grpObjeto
             // 
             this.grpObjeto.Controls.Add(this.lblFigura);
@@ -253,7 +316,7 @@
             this.grpObjeto.Controls.Add(this.lblMaterialInfo);
             this.grpObjeto.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.grpObjeto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.grpObjeto.Location = new System.Drawing.Point(18, 385);
+            this.grpObjeto.Location = new System.Drawing.Point(18, 575);
             this.grpObjeto.Name = "grpObjeto";
             this.grpObjeto.Size = new System.Drawing.Size(380, 235);
             this.grpObjeto.TabIndex = 3;
@@ -373,7 +436,7 @@
             this.grpTrans.Controls.Add(this.lblScaleValue);
             this.grpTrans.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.grpTrans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.grpTrans.Location = new System.Drawing.Point(18, 630);
+            this.grpTrans.Location = new System.Drawing.Point(18, 820);
             this.grpTrans.Name = "grpTrans";
             this.grpTrans.Size = new System.Drawing.Size(380, 750);
             this.grpTrans.TabIndex = 4;
@@ -666,6 +729,7 @@
             this.Name = "Form1";
             this.Text = "Visualizador 3D - Proyecto Final";
             this.panelMenu.ResumeLayout(false);
+            this.grpFiguras.ResumeLayout(false);
             this.grpTrans.ResumeLayout(false);
             this.grpTrans.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackScale)).EndInit();
@@ -733,5 +797,9 @@
         private System.Windows.Forms.TrackBar trackScale;
         private System.Windows.Forms.Label lblScaleValue;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.GroupBox grpFiguras;
+        private System.Windows.Forms.ListBox lstFiguras;
+        private System.Windows.Forms.Button btnAgregarFigura;
+        private System.Windows.Forms.Button btnEliminarFigura;
     }
 }
